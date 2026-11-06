@@ -73,6 +73,7 @@
   /* ── HERO ── */
   .hero {
     min-height: 94vh;
+    min-height: 94svh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -111,15 +112,6 @@
   }
 
   .hero-logo-line { display: block; }
-
-  .hero-tagline {
-    font-family: 'Lora', serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: clamp(16px, 2.2vw, 20px);
-    color: var(--ink-muted);
-    margin-top: 14px;
-  }
 
   .hero-headline {
     font-family: 'Playfair Display', serif;
@@ -164,7 +156,7 @@
     font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--sage);
+    color: var(--ink-muted);
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -275,6 +267,7 @@
     font-weight: 400;
     line-height: 1.55;
     color: var(--ink);
+    text-wrap: balance;
   }
 
   .pain p + p { margin-top: 20px; }
@@ -388,7 +381,7 @@
   }
 
   .pull-quote {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Lora', serif;
     font-style: italic;
     font-weight: 400;
     font-size: clamp(20px, 3vw, 27px);
@@ -414,9 +407,10 @@
     font-size: 11px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--sage);
+    color: var(--ink-muted);
     background: var(--sage-tint);
-    padding: 8px 18px;
+    border: 1px solid var(--sage);
+    padding: 7px 17px;
     margin-bottom: 28px;
     font-weight: 500;
   }
@@ -473,7 +467,7 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 640px) {
-    .hero { min-height: 88vh; padding: 30px 20px 50px; }
+    .hero { min-height: 88vh; min-height: 88svh; padding: 30px 20px 50px; }
     .form-row { flex-direction: column; }
     .form-btn { width: 100%; padding: 14px; }
     .pain, .building, .who, .promise, .bottom-cta { padding-left: 20px; padding-right: 20px; }
@@ -489,24 +483,23 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <p class="hero-eyebrow fade-up">Small First Run · 150 Gowns</p>
+    <p class="hero-eyebrow">Small First Run · 150 Gowns</p>
 
-    <div class="hero-logo fade-up">
+    <div class="hero-logo">
       <span class="hero-logo-line">Never</span>
       <span class="hero-logo-line">Pause</span>
     </div>
-    <p class="hero-tagline fade-up">Don't sweat it.</p>
 
-    <h1 class="hero-headline fade-up">Never pause your sleep.<br><em>You shouldn't have to sweat it.</em></h1>
-    <p class="hero-sub fade-up">Sleepwear for women with night sweats, built for drier, more restful nights.</p>
+    <h1 class="hero-headline">Never pause your sleep.<br><em>You shouldn't have to sweat it.</em></h1>
+    <p class="hero-sub">Sleepwear for women with night sweats, built for drier, more restful nights.</p>
 
-    <div class="hero-features fade-up">
+    <div class="hero-features">
       <span class="hero-feature">Open at the sides</span>
       <span class="hero-feature">Non-clingy</span>
       <span class="hero-feature">Made in Portugal</span>
     </div>
 
-    <form class='form-wrap fade-up' id='hero-form' method='POST' name='waitlist' data-netlify='true'>
+    <form class='form-wrap' id='hero-form' method='POST' name='waitlist' data-netlify='true'>
       <input type="hidden" name="form-name" value="waitlist">
       <div class="form-row">
         <input class="form-input" type="email" name="email" id="hero-email" placeholder="Your email address" autocomplete="email" required>
@@ -555,7 +548,7 @@
 <section class="who">
   <p class="section-eyebrow fade-up">Who Made It</p>
   <blockquote class="pull-quote fade-up">&ldquo;I don't have night sweats. My mom doesn't either. But the women on our street do, so we built this with them.&rdquo;</blockquote>
-  <p class="section-body fade-up">We're a mother and son in Maryland. Menopause was the main topic at our kitchen table, and night sweats kept coming up as the one thing that you sleep in could actually help. So we put samples on the women next door, listened, and changed what they told us to change.</p>
+  <p class="section-body fade-up">We're a mother and son in Maryland. Menopause was the main topic at our kitchen table, and night sweats kept coming up as the one symptom where what you sleep in could actually help. So we put samples on the women next door, listened, and changed what they told us to change.</p>
 </section>
 
 <!-- BOTTOM CTA -->
@@ -603,6 +596,12 @@ document.querySelectorAll('.fade-up').forEach((el, i) => {
   el.style.transitionDelay = `${(i % 4) * 0.07}s`;
   observer.observe(el);
 });
+
+// Safety net: guarantee content appears even if the observer is slow
+// or never fires (e.g. a delayed first layout pass on some phones).
+setTimeout(() => {
+  document.querySelectorAll('.fade-up:not(.visible)').forEach(el => el.classList.add('visible'));
+}, 1200);
 
 function netlifySubmit(formEl, formId, successId) {
   formEl.addEventListener('submit', function(e) {
