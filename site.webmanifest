@@ -1,0 +1,19 @@
+{
+  "name": "Never Pause",
+  "short_name": "Never Pause",
+  "icons": [
+    {
+      "src": "/assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#2C2420",
+  "background_color": "#FAF7F4",
+  "display": "standalone"
+}
