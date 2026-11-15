@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body { font: 14px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; width: 280px; margin: 0; padding: 14px; background: #1f1e1d; color: #f5f2ee; }
+  h1 { font-size: 15px; margin: 0 0 4px; }
+  p { margin: 0 0 12px; color: #b5afa8; font-size: 13px; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 14px; }
+  .stat { background: #2c2a28; border-radius: 8px; padding: 8px; text-align: center; }
+  .stat b { display: block; font-size: 18px; color: #d97757; }
+  .stat span { font-size: 11px; color: #b5afa8; }
+  label { display: flex; align-items: center; gap: 8px; margin: 6px 0; cursor: pointer; }
+  button { margin-top: 10px; background: none; border: 0; color: #8a8580; font-size: 12px; cursor: pointer; padding: 0; text-decoration: underline; }
+</style>
+</head>
+<body>
+  <h1>Code Nudge</h1>
+  <p>Flags prompts that are a better fit for Claude Code, before you send them.</p>
+  <div class="stats">
+    <div class="stat"><b id="nudgesShown">0</b><span>nudges</span></div>
+    <div class="stat"><b id="openedInCode">0</b><span>sent to Code</span></div>
+    <div class="stat"><b id="keptInChat">0</b><span>kept in chat</span></div>
+  </div>
+  <label><input type="checkbox" id="enabled"> On</label>
+  <label><input type="checkbox" id="showMaybe"> Also show "might be" nudges</label>
+  <button id="reset">Reset counts</button>
+  <script src="popup.js"></script>
+</body>
+</html>

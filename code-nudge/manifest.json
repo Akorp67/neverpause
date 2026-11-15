@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Code Nudge",
+  "version": "0.1.0",
+  "description": "Tells you, before you hit enter, when a chat prompt is really a job for Claude Code.",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://claude.ai/*",
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://gemini.google.com/*",
+        "https://copilot.microsoft.com/*"
+      ],
+      "exclude_matches": ["https://claude.ai/code*"],
+      "js": ["classifier.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
