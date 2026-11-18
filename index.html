@@ -453,6 +453,42 @@
 
   .footer-social a:hover { opacity: 1; }
 
+  /* ── FREE GUIDE ── */
+  .guide {
+    background: var(--sage-tint);
+    padding: 70px 24px;
+    text-align: center;
+  }
+
+  .guide-inner { max-width: 600px; margin: 0 auto; }
+
+  .guide-link {
+    display: inline-block;
+    margin-top: 26px;
+    padding: 15px 26px;
+    background: var(--ink);
+    color: var(--cream);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.25s ease;
+  }
+
+  .guide-link:hover { background: var(--sage); }
+
+  footer .footer-why {
+    text-transform: none;
+    letter-spacing: 0;
+    opacity: 0.85;
+    font-size: 12px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    max-width: 420px;
+    margin: 14px auto 0;
+  }
+
   /* ── ANIMATIONS ── */
   .fade-up {
     opacity: 0;
@@ -470,7 +506,7 @@
     .hero { min-height: 88vh; min-height: 88svh; padding: 30px 20px 50px; }
     .form-row { flex-direction: column; }
     .form-btn { width: 100%; padding: 14px; }
-    .pain, .building, .who, .promise, .bottom-cta { padding-left: 20px; padding-right: 20px; }
+    .pain, .building, .who, .promise, .guide, .bottom-cta { padding-left: 20px; padding-right: 20px; }
   }
 </style>
 </head>
@@ -551,6 +587,16 @@
   <p class="section-body fade-up">We're a mother and son in Maryland. Menopause was the main topic at our kitchen table, and night sweats kept coming up as the one symptom where what you sleep in could actually help. So we put samples on the women next door, listened, and changed what they told us to change.</p>
 </section>
 
+<!-- FREE GUIDE -->
+<section class="guide">
+  <div class="guide-inner">
+    <p class="section-eyebrow fade-up">Free Guide</p>
+    <h2 class="section-heading fade-up">Five words on a pajama label <em>that don't mean what you think.</em></h2>
+    <p class="section-body fade-up">Our one-page fabric guide for hot sleepers. What to check before you buy another "cooling" anything. Plain language, no hype.</p>
+    <a class="guide-link fade-up" href="/fabric-guide/">Read the free guide</a>
+  </div>
+</section>
+
 <!-- BOTTOM CTA -->
 <section class="bottom-cta">
   <span class="scarcity-note fade-up">Small first run: 150 gowns</span>
@@ -576,6 +622,7 @@
     <a href="https://www.tiktok.com/@never_pause51" target="_blank" rel="noopener">TikTok</a>
     <a href="https://www.facebook.com/share/1MHzXQGe2q/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
   </div>
+  <p class="footer-why">Why 51? You'll see us as neverpause51 on Instagram, TikTok and Facebook. 51 is about the average age of menopause in the US. It's a little nod to the women we're making this for.</p>
 </footer>
 
 <!-- Static Netlify form detection fallbacks (hidden, never shown to users) -->
