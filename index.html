@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Never Pause · Sleepwear for women with night sweats</title>
-<meta name="description" content="One honest nightgown for women with night sweats, built for drier, more restful nights. Small first run of 150. Join the list.">
+<meta name="description" content="One honest nightgown for women with night sweats, built for drier, more restful nights. Initial first run of 150 gowns. Get early access to pre-order.">
 
 <!-- Favicons / app icons -->
 <link rel="icon" href="/assets/icons/favicon.ico" sizes="any">
@@ -18,11 +18,11 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://weneverpause.com/">
 <meta property="og:title" content="Never Pause · Sleepwear for women with night sweats">
-<meta property="og:description" content="One honest nightgown for women with night sweats, built for drier, more restful nights. Small first run of 150. Join the list.">
+<meta property="og:description" content="One honest nightgown for women with night sweats, built for drier, more restful nights. Initial first run of 150 gowns. Get early access to pre-order.">
 <meta property="og:image" content="https://weneverpause.com/assets/images/og-share-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Never Pause · Sleepwear for women with night sweats">
-<meta name="twitter:description" content="One honest nightgown for women with night sweats, built for drier, more restful nights. Small first run of 150. Join the list.">
+<meta name="twitter:description" content="One honest nightgown for women with night sweats, built for drier, more restful nights. Initial first run of 150 gowns. Get early access to pre-order.">
 <meta name="twitter:image" content="https://weneverpause.com/assets/images/og-share-image.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,10 +70,50 @@
     text-decoration: none;
   }
 
+  /* ── TOP GUIDE BAR ── */
+  .guide-bar {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--blush);
+    color: var(--ink);
+    text-align: center;
+    padding: 12px 16px;
+    box-shadow: 0 1px 0 rgba(44,36,32,0.12);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+  .guide-bar .cta { font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+  .guide-bar:hover .cta { text-decoration-thickness: 2px; }
+  @media (max-width: 480px) { .guide-bar .long { display: none; } }
+
+  /* ── SCROLL CUE ── */
+  .scroll-cue {
+    position: relative;
+    z-index: 2;
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: var(--ink-muted);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .scroll-cue svg { animation: nudge 1.8s ease-in-out infinite; }
+  @keyframes nudge { 0%,100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+  @media (prefers-reduced-motion: reduce) { .scroll-cue svg { animation: none; } }
+
   /* ── HERO ── */
   .hero {
-    min-height: 94vh;
-    min-height: 94svh;
+    min-height: 80vh;
+    min-height: 80svh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -134,9 +174,9 @@
   }
 
   .hero-sub {
-    font-size: 17px;
-    font-weight: 300;
-    color: var(--ink-muted);
+    font-size: 18px;
+    font-weight: 400;
+    color: #4A3F38;
     margin-top: 22px;
     max-width: 460px;
     margin-left: auto;
@@ -224,9 +264,9 @@
   .form-btn:hover { background: var(--sage); }
 
   .form-note {
-    font-size: 11px;
-    color: var(--ink-muted);
-    opacity: 0.75;
+    font-size: 14px;
+    color: #4A3F38;
+    line-height: 1.5;
     letter-spacing: 0.03em;
   }
 
@@ -307,10 +347,10 @@
   }
 
   .section-body {
-    font-size: 15px;
-    font-weight: 300;
-    color: var(--ink-muted);
-    line-height: 1.8;
+    font-size: 18px;
+    font-weight: 400;
+    color: #4A3F38;
+    line-height: 1.75;
     margin-top: 18px;
     max-width: 480px;
     margin-left: auto;
@@ -362,9 +402,9 @@
   }
 
   .promise-sub {
-    font-size: 14px;
-    font-weight: 300;
-    color: rgba(250,247,244,0.65);
+    font-size: 17px;
+    font-weight: 400;
+    color: rgba(250,247,244,0.82);
     line-height: 1.8;
     margin-top: 18px;
     max-width: 420px;
@@ -401,6 +441,8 @@
     text-align: center;
     background: var(--cream);
   }
+
+  .bottom-cta .section-body { margin-top: 14px; }
 
   .scarcity-note {
     display: inline-block;
@@ -503,7 +545,13 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 640px) {
-    .hero { min-height: 88vh; min-height: 88svh; padding: 30px 20px 50px; }
+    .hero { min-height: 0; padding: 24px 20px 28px; }
+    .hero-eyebrow { margin-bottom: 18px; }
+    .hero-logo { font-size: 46px; }
+    .hero-headline { margin-top: 22px; font-size: 26px; }
+    .hero-sub { font-size: 17px; margin-top: 16px; }
+    .form-wrap { margin-top: 24px; }
+    .scroll-cue { margin-top: 24px; }
     .form-row { flex-direction: column; }
     .form-btn { width: 100%; padding: 14px; }
     .pain, .building, .who, .promise, .guide, .bottom-cta { padding-left: 20px; padding-right: 20px; }
@@ -512,14 +560,12 @@
 </head>
 <body>
 
-<nav>
-  <a class="nav-logo" href="#">Never Pause</a>
-</nav>
+<a class="guide-bar" href="/fabric-guide/">Run hot at night? <span class="cta">Read our free <span class="long">Hot Sleepers </span>guide &rarr;</span></a>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <p class="hero-eyebrow">Small First Run · 150 Gowns</p>
+    <p class="hero-eyebrow">Pre-order opening soon · Initial first run of 150 gowns</p>
 
     <div class="hero-logo">
       <span class="hero-logo-line">Never</span>
@@ -541,17 +587,20 @@
         <input class="form-input" type="email" name="email" id="hero-email" placeholder="Your email address" autocomplete="email" required>
         <button class="form-btn" type="submit">Get Early Access</button>
       </div>
-      <p class="form-note">Honest updates every couple of weeks. No spam.</p>
+      <p class="form-note">Share your email to get pre-order info. You'll know the moment pre-order is ready. No spam.</p>
     </form>
     <div class="form-success" id="hero-success">
       <p class="form-success-text">You're on the list.</p>
-      <p class="form-success-sub">We'll be in touch.</p>
+      <p class="form-success-sub">We'll email you when pre-order is ready.</p>
     </div>
   </div>
+  <a class="scroll-cue" href="#more" aria-label="Scroll down to see more">See more
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+  </a>
 </section>
 
 <!-- THE PROBLEM -->
-<section class="pain">
+<section class="pain" id="more">
   <p class="fade-up">Tired of waking up soaked, changing your pajamas at 3am, and dragging through the next day?</p>
   <p class="fade-up">Most sleepwear was never designed for night sweats. <em>It holds the heat in.</em></p>
 </section>
@@ -561,7 +610,7 @@
   <div class="building-inner">
     <p class="section-eyebrow fade-up">What We're Building</p>
     <h2 class="section-heading fade-up">One racerback gown, built for <em>the night you're actually having.</em></h2>
-    <p class="section-body fade-up">Soft lyocell jersey designed to drape instead of cling. Side slits that let air in where heat builds. Nothing tight at the waist.</p>
+    <p class="section-body fade-up">A high quality racerback gown in a premium lyocell blend. Designed to drape instead of cling, with side slits that let air in where heat builds and nothing tight at the waist. Built and tested by women in our community.</p>
     <div class="tags fade-up">
       <span class="tag">Lyocell jersey</span>
       <span class="tag">Non-clingy drape</span>
@@ -575,43 +624,46 @@
 <section class="promise">
   <div class="promise-inner">
     <p class="section-eyebrow fade-up">Our Honest Promise</p>
-    <p class="promise-text fade-up">We can't stop the heat.<br>We can stop your pajamas from <em>making it worse.</em></p>
-    <p class="promise-sub fade-up">We won't promise to end night sweats. We're building something to help you sleep through them more comfortably. Don't sweat it.</p>
+    <p class="promise-text fade-up">We can't stop hot flashes.<br>But our gowns can help you <em>sleep through the night.</em></p>
+    <p class="promise-sub fade-up">No miracle claims. Just a gown that's built for the nights you run hot. Don't sweat it.</p>
   </div>
 </section>
 
 <!-- WHO MADE IT -->
 <section class="who">
   <p class="section-eyebrow fade-up">Who Made It</p>
-  <blockquote class="pull-quote fade-up">&ldquo;I don't have night sweats. My mom doesn't either. But the women on our street do, so we built this with them.&rdquo;</blockquote>
-  <p class="section-body fade-up">We're a mother and son in Maryland. Menopause was the main topic at our kitchen table, and night sweats kept coming up as the one symptom where what you sleep in could actually help. So we put samples on the women next door, listened, and changed what they told us to change.</p>
+  <h2 class="pull-quote fade-up">Made by a mother and son.</h2>
+  <p class="section-body fade-up">Menopause was a main topic at our kitchen table. So was losing sleep to night sweats. Not every night, but often enough: waking up hot and sweaty around 2 or 3am, then lying there unable to fall back asleep.</p>
+  <p class="section-body fade-up">And it wasn't just us. When we talked with our neighbors close by, so many of them were dealing with the same thing. This gown came out of their support and input. They wore the samples, told us what to change, and we changed it.</p>
 </section>
 
 <!-- FREE GUIDE -->
 <section class="guide">
   <div class="guide-inner">
     <p class="section-eyebrow fade-up">Free Guide</p>
-    <h2 class="section-heading fade-up">Five words on a pajama label <em>that don't mean what you think.</em></h2>
-    <p class="section-body fade-up">Our one-page fabric guide for hot sleepers. What to check before you buy another "cooling" anything. Plain language, no hype.</p>
+    <h2 class="section-heading fade-up">The Hot Sleepers Guide. <em>What your pajama label isn't telling you.</em></h2>
+    <p class="section-body fade-up">One page on what to check before you buy another "cooling" anything. Plain language, no hype.</p>
     <a class="guide-link fade-up" href="/fabric-guide/">Read the free guide</a>
   </div>
 </section>
 
 <!-- BOTTOM CTA -->
-<section class="bottom-cta">
-  <span class="scarcity-note fade-up">Small first run: 150 gowns</span>
-  <h2 class="section-heading fade-up">Join the list to <em>hear first.</em></h2>
+<section class="bottom-cta" id="preorder">
+  <p class="section-eyebrow fade-up">Pre-order</p>
+  <span class="scarcity-note fade-up">Initial first run: 150 gowns</span>
+  <h2 class="section-heading fade-up">Pre-order is almost ready. <em>Get early access.</em></h2>
+  <p class="section-body fade-up">Share your email to get pre-order info. People on the list hear first.</p>
 
   <form class='form-wrap fade-up' id='bottom-form' method='POST' name='waitlist-bottom' data-netlify='true'>
     <input type="hidden" name="form-name" value="waitlist-bottom">
     <div class="form-row">
       <input class="form-input" type="email" name="email" id="bottom-email" placeholder="Your email address" autocomplete="email" required>
-      <button class="form-btn" type="submit">Count Me In</button>
+      <button class="form-btn" type="submit">Get Early Access</button>
     </div>
   </form>
   <div class="form-success" id="bottom-success">
     <p class="form-success-text">You're on the list.</p>
-    <p class="form-success-sub">We'll be in touch.</p>
+    <p class="form-success-sub">We'll email you when pre-order is ready.</p>
   </div>
 </section>
 
