@@ -73,18 +73,22 @@
   /* ── TOP GUIDE BAR ── */
   .guide-bar {
     display: block;
-    background: var(--ink);
-    color: var(--cream);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--blush);
+    color: var(--ink);
     text-align: center;
-    padding: 13px 20px;
+    padding: 12px 16px;
+    box-shadow: 0 1px 0 rgba(44,36,32,0.12);
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 0.02em;
     text-decoration: none;
   }
-  .guide-bar strong { font-weight: 500; color: var(--blush); }
-  .guide-bar span { text-decoration: underline; text-underline-offset: 3px; }
-  .guide-bar:hover span { color: var(--blush); }
+  .guide-bar .cta { font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+  .guide-bar:hover .cta { text-decoration-thickness: 2px; }
+  @media (max-width: 480px) { .guide-bar .long { display: none; } }
 
   /* ── SCROLL CUE ── */
   .scroll-cue {
@@ -556,7 +560,7 @@
 </head>
 <body>
 
-<a class="guide-bar" href="/fabric-guide/"><strong>Free:</strong> the Hot Sleepers Guide. <span>Read it here</span></a>
+<a class="guide-bar" href="/fabric-guide/">Run hot at night? <span class="cta">Read our free <span class="long">Hot Sleepers </span>guide &rarr;</span></a>
 
 <!-- HERO -->
 <section class="hero">
@@ -629,7 +633,7 @@
 <section class="who">
   <p class="section-eyebrow fade-up">Who Made It</p>
   <h2 class="pull-quote fade-up">Made by a mother and son.</h2>
-  <p class="section-body fade-up">Menopause was a main topic at our kitchen table. So was losing sleep to night sweats: waking up hot and sweaty around 2 or 3am, then lying there unable to fall back asleep.</p>
+  <p class="section-body fade-up">Menopause was a main topic at our kitchen table. So was losing sleep to night sweats, because she gets them herself. Not every night, but enough: waking up hot and sweaty around 2 or 3am, then lying there unable to fall back asleep.</p>
   <p class="section-body fade-up">And it wasn't just us. When we talked with our neighbors close by, so many of them were dealing with the same thing. This gown came out of their support and input. They wore the samples, told us what to change, and we changed it.</p>
 </section>
 
